@@ -1,0 +1,58 @@
+.button {
+  appearance: none;
+  border: 1px solid transparent;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  min-height: 44px;
+  padding: 10px 24px;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: transform 0.2s ease, background-color 0.2s ease, border-color 0.2s ease;
+
+  &:hover {
+    transform: translateY(-1px);
+  }
+}
+
+.primary {
+  background: #8e4f38;
+  color: #fff;
+  border-color: #8e4f38;
+}
+
+.ghost {
+  color: #3a332f;
+  background: transparent;
+  box-shadow: none;
+  border-color: #d6cec8;
+}
+
+.ghostLight {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.18);
+  border-color: rgba(255, 255, 255, 0.5);
+}
+
+.light {
+  color: #2f2a27;
+  background: #fff;
+  border-color: #fff;
+}
+
+.outlineLight {
+  color: #fff;
+  background: transparent;
+  border-color: rgba(255, 255, 255, 0.45);
+}
+
+.small {
+  min-height: 38px;
+  padding-inline: 14px;
+  font-size: 0.86rem;
+  font-weight: 700;
+}
