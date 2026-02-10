@@ -14,9 +14,11 @@
   padding: 56px 20px;
   text-align: center;
   color: #fff;
-  background:
+  background-image:
     linear-gradient(180deg, rgba(21, 18, 17, 0.72), rgba(21, 18, 17, 0.72)),
-    url("/hero2.jpg") center / cover;
+    var(--booking-bg);
+  background-position: center;
+  background-size: cover;
 
   h2 {
     font-family: "Cormorant Garamond", serif;
