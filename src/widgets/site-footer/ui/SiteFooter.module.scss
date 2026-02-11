@@ -1,19 +1,19 @@
-.footer {
+﻿.footer {
   background: #f0eeed;
-  border-top: 1px solid #e1dedb;
-  padding: 34px 0 18px;
+  border-top: 1px solid var(--line);
+  padding: var(--space-8) 0 var(--space-4);
 }
 
 .container {
-  width: min(var(--container-lg), calc(100% - 56px));
+  width: min(var(--container-lg), calc(100% - var(--container-inline)));
   margin-inline: auto;
 }
 
 .top {
   display: grid;
   grid-template-columns: 1.3fr 0.6fr 0.8fr;
-  gap: 34px;
-  padding-bottom: 34px;
+  gap: var(--space-8);
+  padding-bottom: var(--space-8);
 }
 
 .logo {
@@ -21,21 +21,21 @@
 }
 
 .description {
-  margin-top: 14px;
+  margin-top: var(--space-4);
   max-width: 320px;
   color: #8c847f;
-  font-size: 0.9rem;
+  font-size: var(--text-sm);
 }
 
 .column {
   display: grid;
   align-content: start;
-  gap: 9px;
+  gap: var(--space-2);
 
   h3 {
     margin: 0 0 6px;
     color: #383533;
-    font-size: 0.84rem;
+    font-size: var(--text-xs);
     letter-spacing: 0.08em;
     font-weight: 700;
   }
@@ -44,38 +44,38 @@
   span {
     color: #7f7671;
     text-decoration: none;
-    font-size: 0.9rem;
+    font-size: var(--text-sm);
   }
 }
 
 .bottom {
-  border-top: 1px solid #e2ddda;
-  padding-top: 12px;
+  border-top: 1px solid var(--line);
+  padding-top: var(--space-3);
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 14px;
+  gap: var(--space-4);
 
   small {
     color: #9b928d;
-    font-size: 0.78rem;
+    font-size: var(--text-xs);
   }
 
   div {
     display: inline-flex;
-    gap: 22px;
+    gap: var(--space-5);
   }
 
   a {
     color: #9b928d;
     text-decoration: none;
-    font-size: 0.78rem;
+    font-size: var(--text-xs);
   }
 }
 
 @media (max-width: 980px) {
   .container {
-    width: min(var(--container-lg), calc(100% - 28px));
+    width: min(var(--container-lg), calc(100% - var(--container-inline)));
   }
 
   .top {
@@ -87,3 +87,21 @@
     align-items: flex-start;
   }
 }
+
+@media (max-width: 640px) {
+  .container {
+    width: min(var(--container-lg), calc(100% - var(--container-inline)));
+  }
+
+  .footer {
+    padding: var(--space-7) 0 var(--space-3);
+  }
+
+  .bottom {
+    div {
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+  }
+}
+

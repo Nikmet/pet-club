@@ -1,5 +1,4 @@
-import { useMemo, useState } from "react";
-import Fuse from "fuse.js";
+import { useEffect, useMemo, useState } from "react";
 import { servicesCatalog } from "@/entities/service/model/servicesCatalog";
 
 const getPriceEntries = (row, columns, includeEmpty = true) => {
@@ -22,6 +21,7 @@ const getPriceEntries = (row, columns, includeEmpty = true) => {
 export const useServicesCatalog = () => {
   const [activeTabId, setActiveTabId] = useState(servicesCatalog[0]?.id ?? "");
   const [query, setQuery] = useState("");
+  const [fuse, setFuse] = useState(null);
 
   const tabs = useMemo(
     () =>
@@ -60,23 +60,38 @@ export const useServicesCatalog = () => {
     []
   );
 
-  const fuse = useMemo(
-    () =>
-      new Fuse(searchSource, {
-        includeScore: true,
-        threshold: 0.34,
-        ignoreLocation: true,
-        minMatchCharLength: 2,
-        keys: [
-          { name: "name", weight: 0.76 },
-          { name: "aliases", weight: 0.24 }
-        ]
-      }),
-    [searchSource]
-  );
+  useEffect(() => {
+    if (!isSearching) {
+      setFuse(null);
+      return;
+    }
+
+    let isCancelled = false;
+
+    import("fuse.js").then(({ default: Fuse }) => {
+      if (isCancelled) return;
+
+      setFuse(
+        new Fuse(searchSource, {
+          includeScore: true,
+          threshold: 0.34,
+          ignoreLocation: true,
+          minMatchCharLength: 2,
+          keys: [
+            { name: "name", weight: 0.76 },
+            { name: "aliases", weight: 0.24 }
+          ]
+        })
+      );
+    });
+
+    return () => {
+      isCancelled = true;
+    };
+  }, [isSearching, searchSource]);
 
   const results = useMemo(() => {
-    if (!isSearching) return [];
+    if (!isSearching || !fuse) return [];
 
     return fuse.search(normalizedQuery).map((item) => item.item);
   }, [fuse, isSearching, normalizedQuery]);

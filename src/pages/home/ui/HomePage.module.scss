@@ -1,4 +1,9 @@
 .page {
-    display: grid;
+    display: block;
     padding-bottom: 0;
+}
+
+.sectionFallback {
+    min-height: clamp(280px, 40vh, 520px);
+    background: linear-gradient(180deg, rgba(247, 243, 239, 0.65) 0%, rgba(238, 229, 222, 0.45) 100%);
 }

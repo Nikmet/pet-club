@@ -39,10 +39,16 @@ export const HeroSection = () => {
             </div>
           </div>
           <figure className={styles.photo}>
-            <img src={getPublicAssetUrl("hero.jpg")} alt="Питомец и мастер в груминг-салоне" />
+            <img
+              src={getPublicAssetUrl("hero.jpg")}
+              alt="Питомец и мастер в груминг-салоне"
+              loading="eager"
+              fetchPriority="high"
+              decoding="async"
+            />
             <figcaption className={styles.reviewCard}>
               <div className={styles.avatar} aria-hidden="true">
-                <img src={getPublicAssetUrl("avatar.png")} alt="МИ" />
+                <img src={getPublicAssetUrl("avatar.png")} alt="Аватар клиента" loading="lazy" decoding="async" />
               </div>
               <div>
                 <strong>Мария Иванова</strong>

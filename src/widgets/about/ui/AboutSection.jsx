@@ -9,7 +9,7 @@ export const AboutSection = () => {
       <div className={styles.container}>
         <div className={styles.layout}>
           <figure className={styles.image}>
-            <img src={getPublicAssetUrl("about.jpg")} alt="Гость салона на груминге" />
+            <img src={getPublicAssetUrl("about.jpg")} alt="Гость салона на груминге" loading="lazy" decoding="async" />
           </figure>
           <div className={styles.content}>
             <p className={styles.eyebrow}>О НАС</p>

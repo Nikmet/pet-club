@@ -51,7 +51,8 @@
     padding: 7px 9px;
     display: grid;
     gap: 2px;
-    min-width: 120px;
+    min-width: 0;
+    flex: 1 1 145px;
   }
 
   small {
@@ -104,5 +105,9 @@
   .prices {
     display: grid;
     gap: 6px;
+
+    div {
+      width: 100%;
+    }
   }
 }

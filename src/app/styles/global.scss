@@ -8,14 +8,22 @@
 
 html {
   scroll-behavior: smooth;
+  text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
 }
 
 body {
   margin: 0;
-  font-family: "Manrope", sans-serif;
+  font-family: var(--font-sans);
+  font-size: var(--text-md);
   color: var(--ink);
   background: var(--bg);
-  line-height: 1.55;
+  line-height: var(--lh-base);
+  overflow-x: hidden;
+  text-rendering: optimizeLegibility;
+  font-synthesis-weight: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 a {
@@ -31,15 +39,28 @@ h1,
 h2,
 h3 {
   margin: 0;
-  line-height: 1.14;
+  line-height: var(--lh-tight);
+  color: var(--ink);
 }
 
 p {
   margin: 0;
+  line-height: var(--lh-base);
 }
 
 ul {
   margin: 0;
   padding: 0;
   list-style: none;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+:where(section[id]) {
+  scroll-margin-top: var(--anchor-offset);
 }

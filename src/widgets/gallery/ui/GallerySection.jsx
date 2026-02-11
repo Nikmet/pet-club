@@ -7,42 +7,49 @@ const galleryVideos = [
     {
         id: "g2",
         videoSrc: getPublicAssetUrl("gallery/g2.mp4"),
+        posterSrc: getPublicAssetUrl("gallery/g2-poster.jpg"),
         title: "Корги такие милые!",
         previewTime: 5.5
     },
     {
         id: "corgi",
         videoSrc: getPublicAssetUrl("gallery/g1.mp4"),
+        posterSrc: getPublicAssetUrl("gallery/g1-poster.jpg"),
         title: "Непоседа самоед и его коготки",
         previewTime: 7
     },
     {
         id: "g3",
         videoSrc: getPublicAssetUrl("gallery/g3.mp4"),
+        posterSrc: getPublicAssetUrl("gallery/g3-poster.jpg"),
         title: "Почему он такой красивый?",
         previewTime: 2.6
     },
     {
         id: "g4",
         videoSrc: getPublicAssetUrl("gallery/g4.mp4"),
+        posterSrc: getPublicAssetUrl("gallery/g4-poster.jpg"),
         title: "Он доволен, честно",
         previewTime: 0.9
     },
     {
         id: "g5",
         videoSrc: getPublicAssetUrl("gallery/g5.mp4"),
+        posterSrc: getPublicAssetUrl("gallery/g5-poster.jpg"),
         title: "Французский интеллигент",
         previewTime: 1.3
     },
     {
         id: "g6",
         videoSrc: getPublicAssetUrl("gallery/g6.mp4"),
+        posterSrc: getPublicAssetUrl("gallery/g6-poster.jpg"),
         title: 'Мистер "Мне пофиг"',
         previewTime: 1.5
     },
     {
         id: "g7",
         videoSrc: getPublicAssetUrl("gallery/g7.mp4"),
+        posterSrc: getPublicAssetUrl("gallery/g7-poster.jpg"),
         title: "Это не игрушка. Он настоящий!",
         previewTime: 3
     }
@@ -67,6 +74,7 @@ export const GallerySection = () => {
                             <HoverVideo
                                 key={featuredVideo.id}
                                 videoSrc={featuredVideo.videoSrc}
+                                posterSrc={featuredVideo.posterSrc}
                                 title={featuredVideo.title}
                                 previewTime={featuredVideo.previewTime}
                                 className={styles.featuredVideo}
@@ -78,6 +86,7 @@ export const GallerySection = () => {
                             <HoverVideo
                                 key={item.id}
                                 videoSrc={item.videoSrc}
+                                posterSrc={item.posterSrc}
                                 title={item.title}
                                 previewTime={item.previewTime}
                                 className={styles.sideVideo}

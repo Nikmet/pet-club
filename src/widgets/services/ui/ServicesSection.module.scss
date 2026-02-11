@@ -1,10 +1,11 @@
-.section {
+﻿.section {
   background: #f7f3ef;
-  padding: 82px 0;
+  padding: var(--section-space) 0;
+  overflow: hidden;
 }
 
 .container {
-  width: min(var(--container-lg), calc(100% - 56px));
+  width: min(var(--container-lg), calc(100% - var(--container-inline)));
   margin-inline: auto;
 }
 
@@ -13,59 +14,59 @@
 
   h2 {
     margin: 0;
-    font-family: "Cormorant Garamond", serif;
+    font-family: var(--font-serif);
     font-size: clamp(2.2rem, 5vw, 4.9rem);
-    line-height: 0.9;
+    line-height: var(--lh-tight);
     color: #8f5842;
     letter-spacing: 0.02em;
   }
 }
 
 .sectionLabel {
-  margin-top: 16px;
+  margin-top: var(--space-4);
   text-transform: uppercase;
   letter-spacing: 0.14em;
-  font-size: 0.82rem;
+  font-size: var(--text-xs);
   color: #8b5f4d;
   font-weight: 700;
 }
 
 .subTitle {
-  margin-top: 8px;
+  margin-top: var(--space-2);
   color: #695f58;
-  font-size: 1rem;
+  font-size: var(--text-md);
   font-weight: 500;
 }
 
 .content {
-  margin-top: 22px;
+  margin-top: var(--space-6);
 }
 
 .notes {
-  margin-top: 18px;
+  margin-top: var(--space-5);
   text-align: center;
 
   p {
     color: #9e9088;
-    font-size: 0.83rem;
+    font-size: var(--text-xs);
     line-height: 1.42;
   }
 
   p + p {
-    margin-top: 8px;
+    margin-top: var(--space-2);
   }
 }
 
 .priceLink {
   display: block;
   width: fit-content;
-  margin: 18px auto 0;
+  margin: var(--space-5) auto 0;
   color: #b46b4b;
-  font-size: 0.9rem;
+  font-size: var(--text-sm);
   font-weight: 600;
   text-decoration: none;
   border-bottom: 1px solid rgba(180, 107, 75, 0.34);
-  transition: color 0.2s ease, border-color 0.2s ease;
+  transition: color var(--dur-fast) var(--ease-standard), border-color var(--dur-fast) var(--ease-standard);
 
   &:hover,
   &:focus-visible {
@@ -76,20 +77,44 @@
 
 @media (max-width: 980px) {
   .container {
-    width: min(var(--container-lg), calc(100% - 32px));
+    width: min(var(--container-lg), calc(100% - var(--container-inline)));
   }
 
   .section {
-    padding: 70px 0;
+    padding: var(--section-space-sm) 0;
   }
 }
 
 @media (max-width: 640px) {
   .container {
-    width: min(var(--container-lg), calc(100% - 24px));
+    width: min(var(--container-lg), calc(100% - var(--container-inline)));
+  }
+
+  .section {
+    padding: var(--section-space-sm) 0;
+  }
+
+  .head h2 {
+    font-size: clamp(1.9rem, 9.8vw, 2.65rem);
   }
 
   .subTitle {
-    font-size: 0.92rem;
+    font-size: var(--text-sm);
+  }
+
+  .sectionLabel {
+    font-size: var(--text-2xs);
+    letter-spacing: 0.1em;
+  }
+
+  .priceLink {
+    font-size: var(--text-xs);
+    text-align: center;
+  }
+
+  .notes p {
+    font-size: var(--text-2xs);
+    line-height: 1.35;
   }
 }
+

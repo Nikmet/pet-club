@@ -32,20 +32,22 @@
   .priceRow {
     display: flex;
     justify-content: space-between;
-    align-items: baseline;
+    align-items: flex-start;
     gap: 12px;
 
     span {
       color: #8f837b;
       font-size: 0.74rem;
       line-height: 1.2;
+      max-width: 70%;
     }
 
     strong {
       color: #504844;
       font-size: 0.84rem;
       text-align: right;
-      white-space: nowrap;
+      margin-left: auto;
+      white-space: normal;
     }
   }
 
